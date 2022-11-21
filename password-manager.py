@@ -1,9 +1,10 @@
-#Basic PassWord Manager Using Dictionary\
 Login_Name='admin'
 Login_Pw='Admin@1234'
 
 #MenuSystem
 def menu():
+    """This is a menu section"""
+
     while True:
         print("\n\tWELCOME")
         print("1. Add Password")
@@ -18,6 +19,8 @@ def menu():
 
 #Option Selection
 def option_selector(opt):
+    """This is after choosing an option from menu"""
+
     if(opt== "1"):
         print("Add")
     elif(opt== "2"):
@@ -31,18 +34,23 @@ def option_selector(opt):
     
 #database
 def search():
+    """This searches the data in database"""
+    
     database_data= {'jugalnepali@gmail.com':'Jugalkobau','jugaldaikoac@gmail.com':'Jugalko1234'}
     email= input("Enter the email/ username:")
     search=database_data[email]
     print("The password for ("+email+") is:"+search)
 
-
+#Main part of the system
 #Login System
 def login():
+    """Very first screen Used for logging in!"""
+
     while True:
         Login_Name_Input= input("NAME:").lower()
         Login_Pw_Input= input("PASSWORD:")
         if Login_Name_Input == Login_Name and Login_Pw_Input == Login_Pw:
             menu()
             break
+
 login()
